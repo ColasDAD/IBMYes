@@ -2,7 +2,6 @@
 
 **自动重启可能失效，IBM的API节点似乎失效**
 
-
 本项目包括3部分
 
 1. IBM Cloud Fonudray搭建应用
@@ -10,7 +9,7 @@
 3. Cloudflare 高速节点中转
 
 
-# 使用IBM Cloud Fonudray搭建V2Ray
+# 1.使用IBM Cloud Fonudray搭建V2Ray
 
 首先注册https://cloud.ibm.com/
 
@@ -74,7 +73,8 @@ URL后加上生成的WebSocket路径，看到`Bad Request`便成功了
 
 至此我们已经有一个可用的v2ray了，但是他每10天会重启一次，而且网速延迟很差，所以接下来会解决这个问题。
 
-# 利用Github的Actions 定时重启 IBM Cloud Fonudray
+
+# 2.利用Github的Actions 定时重启 IBM Cloud Fonudray
 
 IBM Cloud 10天不操作就会关机，所以我们需要 十天内对其重启一次，避免关机。
 
@@ -157,8 +157,6 @@ REGION_NUM // 区域编码
 RESOURSE_ID // 资源组ID
 ```
 
-
-
 以`IBM_ACCOUNT`为例![image-20200615184703280](img/README/image-20200615184703280.png)
 
 第一行为邮箱，第二行为密码。
@@ -193,11 +191,8 @@ RESOURSE_ID // 资源组ID
 
 找到 `Re-run jobs`重新执行一次即可，至此自动重启已经ok了。
 
-> 感谢药油@[My Flavor](https://yaohuo.me/bbs/userinfo.aspx?touserid=24109)，原本打算弄bash在自己服务器定期执行脚本，现在看了他的帖子，发现用Actions是一个更好的选择。
 
-# Cloudflare 高速节点中转
-
-> 此部分贡献来自药油@[Joyace](https://yaohuo.me/bbs/userinfo.aspx?touserid=5461)、@[老婆](https://yaohuo.me/bbs/userinfo.aspx?touserid=21843)以及@[小俊博客](https://www.xjisme.com/)
+# 3.Cloudflare 高速节点中转
 
 cloudflare官网：https://www.cloudflare.com/
 
